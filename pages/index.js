@@ -21,15 +21,15 @@ export default function Home({ allPostData }) {
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
-          {allPostData.map(({ id, date, title }) => (
+          {allPostData.map(({ id, date, title, author }) => (
             <li className={utilStyles.listItem} key={id}>
               <Link href={`/posts/${id}`}>
                 <a>{title}</a>
               </Link>
               <br />
-              <small className={utilStyles.lightText}>
+              <span>Author: {author}</span>
+              <br />
                 <Date dateString={date} />
-              </small>
             </li>
           ))}
         </ul>
